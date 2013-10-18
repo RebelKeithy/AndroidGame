@@ -17,6 +17,7 @@ import com.example.graphicstest.Player;
 
 public class GameBoard extends View
 {
+    public static Camera camera;
     private Paint p;
     private List<Point> starField = null;
     private int starAlpha = 80;
@@ -34,6 +35,7 @@ public class GameBoard extends View
         // it's best not to create any new objects in the on draw
         // initialize them as class variables here
         p = new Paint();
+        camera = new Camera();
     }
 
     private void initializeStars(int maxX, int maxY)
@@ -73,11 +75,11 @@ public class GameBoard extends View
             canvas.drawPoint(starField.get(i).x, starField.get(i).y, p);
         }
         
-        
+
+        camera.update();
         
         Renderer renderer = new Renderer(canvas);
-        Player player = GameEngine.instance().getPlayer();
-        renderer.setCenter(player.getX(), player.getY());
+        renderer.setCenter(camera.getX(), camera.getY());
         renderer.render();
         //GameEngine.instance().getWorld().render(renderer);
     }
