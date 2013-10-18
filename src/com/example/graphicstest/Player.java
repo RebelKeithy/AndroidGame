@@ -13,8 +13,8 @@ public class Player
     
     public Player()
     {
-        x = 100;
-        y = 100;
+        x = 0;
+        y = 0;
     }
     
     public int getX()
@@ -49,7 +49,7 @@ public class Player
     
     public void render(Renderer renderer)
     {
-        renderer.drawSprite("player", x, y);
+        renderer.drawSprite("player", x/32, y/32);
     }
 
     public void setX(int x)

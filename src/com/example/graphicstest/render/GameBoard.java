@@ -78,6 +78,7 @@ public class GameBoard extends View
         Renderer renderer = new Renderer(canvas);
         Player player = GameEngine.instance().getPlayer();
         renderer.setCenter(player.getX(), player.getY());
-        GameEngine.instance().getWorld().render(renderer);
+        renderer.render();
+        //GameEngine.instance().getWorld().render(renderer);
     }
 }

@@ -30,7 +30,6 @@ public class InputManager implements OnTouchListener
             Coord worldEventCoord = Util.screenToWorld(view, new Coord((int)event.getAxisValue(MotionEvent.AXIS_X), (int)event.getAxisValue(MotionEvent.AXIS_Y)));
             player.setX(worldEventCoord.getX());
             player.setY(worldEventCoord.getY());
-            System.out.println("Player set to " + player.getX() + " " + player.getY());
         }
         
         return true;
